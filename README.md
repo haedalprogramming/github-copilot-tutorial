@@ -296,4 +296,29 @@ on:
 
 ---
 
-필요하시면 **“템플릿 리포 + 완성된 워크플로우”**를 바로 쓸 수 있도록 최소 구현 코드를 만들어드릴게요. 어떤 스타일(라이트/다크, 컬러 톤, 섹션 구성)로 가고 싶으세요?
+# Intro Page (GitHub Pages + Actions)
+
+간단한 자기소개 페이지 템플릿입니다. 정적 파일만으로 구성되어 GitHub Actions로 자동 배포됩니다.
+
+## 배포 방법
+1. 이 레포 구조를 복사해 새 저장소를 만듭니다.
+2. `.github/workflows/pages.yml` 그대로 사용합니다.
+3. 리포 설정에서 **Settings → Pages → Source: GitHub Actions**를 선택합니다.
+4. `main` 브랜치에 푸시하면 자동으로 Pages에 배포됩니다.
+
+### 주소
+일반적으로 `https://<username>.github.io/<repo>/` 로 노출됩니다. 리포명이 `<username>.github.io`이면 루트 도메인으로 열립니다.
+
+## 커스터마이즈
+- `index.html`의 텍스트/링크를 본인 정보로 바꾸세요.
+- `assets/avatar.jpg`, `assets/og-image.png`, `assets/favicon.ico`를 교체하세요.
+- 다크 모드는 우상단 🌓 버튼으로 토글되며 로컬 스토리지에 저장됩니다.
+
+## 로컬 미리보기(옵션)
+```bash
+python -m http.server 5173
+# http://localhost:5173
+```
+
+## PR 미리보기
+워크플로우는 `pull_request`에서도 실행되어 미리보기 URL이 PR에 표시됩니다. 필요 없으면 트리거에서 제거하세요.

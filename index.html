@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>홍길동 – 소개</title>
+  <meta name="description" content="홍길동의 간단한 자기소개 페이지" />
+  <meta property="og:title" content="홍길동 – 소개" />
+  <meta property="og:description" content="홍길동의 간단한 자기소개 페이지" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.png" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
+    <div class="hero">
+      <img class="avatar" src="assets/avatar.jpg" alt="프로필 이미지" />
+      <h1>홍길동</h1>
+      <p class="role">백엔드 개발자 · 서울</p>
+      <p class="tagline">문제를 단순하게 풀어내는 것을 좋아합니다. 요즘은 Go와 분산 시스템에 관심이 많아요.</p>
+      <div class="actions">
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn outline" href="https://github.com/yourid" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>About</h2>
+      <p>안녕하세요! 서비스 안정성과 효율성을 높이는 일을 좋아하는 백엔드 엔지니어입니다. 확장 가능한 API, 메시징, 관측 가능성에 관심이 많습니다.</p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="badges">
+        <li class="badge">Go</li>
+        <li class="badge">Kotlin</li>
+        <li class="badge">AWS</li>
+        <li class="badge">Docker</li>
+        <li class="badge">PostgreSQL</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>요약 대시보드</h3>
+          <p>Kafka 기반 이벤트 스트림을 소비하여 지표를 실시간으로 집계하는 대시보드.</p>
+          <a class="more" href="#">자세히 보기 →</a>
+        </article>
+        <article class="card">
+          <h3>이미지 파이프라인</h3>
+          <p>이미지 업로드·리사이즈·캐싱을 자동화한 경량 파이프라인.</p>
+          <a class="more" href="#">자세히 보기 →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:you@example.com">you@example.com</a> · 🐙 <a href="https://github.com/yourid" target="_blank" rel="noreferrer">GitHub</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">© <span id="year"></span> Hong Gil-dong</footer>
+
+  <script>
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const root = document.documentElement;
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      localStorage.setItem('theme', next);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
