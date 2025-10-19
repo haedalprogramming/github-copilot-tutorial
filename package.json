@@ -1,0 +1,21 @@
+{
+  "name": "github-copilot-tutorial",
+  "version": "1.0.0",
+  "description": "A tutorial repository for creating a personal introduction page using GitHub Copilot CLI.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 5173",
+    "build": "echo 'No build step required for static site.'"
+  },
+  "keywords": [
+    "github",
+    "copilot",
+    "tutorial",
+    "introduction",
+    "page"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
