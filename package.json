@@ -1,21 +1,24 @@
 {
-  "name": "github-copilot-tutorial",
+  "name": "my-profile-page",
   "version": "1.0.0",
-  "description": "A tutorial repository for creating a personal introduction page using GitHub Copilot CLI.",
+  "description": "나만의 자기소개 페이지 - 초보자를 위한 간단한 템플릿",
   "main": "index.html",
   "scripts": {
-    "start": "python -m http.server 5173",
-    "build": "echo 'No build step required for static site.'"
+    "start": "python3 -m http.server 8000 || python -m http.server 8000",
+    "dev": "npm run start"
   },
   "keywords": [
-    "github",
-    "copilot",
-    "tutorial",
-    "introduction",
-    "page"
+    "profile",
+    "portfolio",
+    "personal-page",
+    "github-pages",
+    "template",
+    "beginner-friendly"
   ],
   "author": "Your Name",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/your-repo-name"
+  }
 }
