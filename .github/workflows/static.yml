@@ -2,9 +2,8 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main", "master"]
+  # Pages is not configured for this repository (GET /pages returns 404).
+  # Re-enable automatic pushes after explicitly enabling a Pages site.
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
